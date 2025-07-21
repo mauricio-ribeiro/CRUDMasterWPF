@@ -1,0 +1,26 @@
+[
+  {
+    "Id": 1,
+    "Nome": "Coca cola 2 L",
+    "Codigo": "121212",
+    "Valor": 10.0
+  },
+  {
+    "Id": 2,
+    "Nome": "Pão de Forma",
+    "Codigo": "32333",
+    "Valor": 8.0
+  },
+  {
+    "Id": 3,
+    "Nome": "Leite caixa UHT Bela Vita Desnatado",
+    "Codigo": "65656566",
+    "Valor": 11.0
+  },
+  {
+    "Id": 4,
+    "Nome": "Whey Proten",
+    "Codigo": "545455",
+    "Valor": 150.0
+  }
+]

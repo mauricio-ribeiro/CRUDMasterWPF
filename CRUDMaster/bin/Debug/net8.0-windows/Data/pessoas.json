@@ -1,0 +1,26 @@
+[
+  {
+    "Id": 1,
+    "Nome": "Ana Paula",
+    "CPF": "03330602023",
+    "Endereco": "Rua teste, 11"
+  },
+  {
+    "Id": 2,
+    "Nome": "Arnaldo Viana",
+    "CPF": "21674596022",
+    "Endereco": "Rua Patria Amada, 22"
+  },
+  {
+    "Id": 3,
+    "Nome": "Carlos André",
+    "CPF": "68686742017",
+    "Endereco": "Rua dos Tres Poderes, 222"
+  },
+  {
+    "Id": 4,
+    "Nome": "Marcus Uzai",
+    "CPF": "84394358000",
+    "Endereco": "Rua Projetada, 99"
+  }
+]

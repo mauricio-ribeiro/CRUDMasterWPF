@@ -1,0 +1,120 @@
+[
+  {
+    "Id": 1,
+    "PessoaId": 1,
+    "PessoaNome": "Ana Paula",
+    "FormaPagamento": 0,
+    "DataVenda": "2025-07-20T19:04:25.2375612-03:00",
+    "ValorTotal": 29.0,
+    "Status": 0,
+    "Produtos": [
+      {
+        "ProdutoId": 1,
+        "ProdutoNome": "Coca cola 2 L",
+        "Quantidade": 1,
+        "ValorUnitario": 10.0,
+        "ValorTotal": 10.0
+      },
+      {
+        "ProdutoId": 2,
+        "ProdutoNome": "Pão de Forma",
+        "Quantidade": 1,
+        "ValorUnitario": 8.0,
+        "ValorTotal": 8.0
+      },
+      {
+        "ProdutoId": 3,
+        "ProdutoNome": "Leite caixa UHT Bela Vita Desnatado",
+        "Quantidade": 1,
+        "ValorUnitario": 11.0,
+        "ValorTotal": 11.0
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "PessoaId": 2,
+    "PessoaNome": "Arnaldo Viana",
+    "FormaPagamento": 1,
+    "DataVenda": "2025-07-20T19:04:42.0086273-03:00",
+    "ValorTotal": 210.0,
+    "Status": 0,
+    "Produtos": [
+      {
+        "ProdutoId": 1,
+        "ProdutoNome": "Coca cola 2 L",
+        "Quantidade": 10,
+        "ValorUnitario": 10.0,
+        "ValorTotal": 100.0
+      },
+      {
+        "ProdutoId": 3,
+        "ProdutoNome": "Leite caixa UHT Bela Vita Desnatado",
+        "Quantidade": 10,
+        "ValorUnitario": 11.0,
+        "ValorTotal": 110.0
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "PessoaId": 3,
+    "PessoaNome": "Carlos André",
+    "FormaPagamento": 2,
+    "DataVenda": "2025-07-20T19:05:06.324818-03:00",
+    "ValorTotal": 95.0,
+    "Status": 0,
+    "Produtos": [
+      {
+        "ProdutoId": 3,
+        "ProdutoNome": "Leite caixa UHT Bela Vita Desnatado",
+        "Quantidade": 5,
+        "ValorUnitario": 11.0,
+        "ValorTotal": 55.0
+      },
+      {
+        "ProdutoId": 2,
+        "ProdutoNome": "Pão de Forma",
+        "Quantidade": 5,
+        "ValorUnitario": 8.0,
+        "ValorTotal": 40.0
+      }
+    ]
+  },
+  {
+    "Id": 4,
+    "PessoaId": 4,
+    "PessoaNome": "Marcus Uzai",
+    "FormaPagamento": 2,
+    "DataVenda": "2025-07-21T12:00:21.6222968-03:00",
+    "ValorTotal": 1500.0,
+    "Status": 2,
+    "Produtos": [
+      {
+        "ProdutoId": 4,
+        "ProdutoNome": "Whey Proten",
+        "Quantidade": 10,
+        "ValorUnitario": 150.0,
+        "ValorTotal": 1500.0
+      }
+    ]
+  },
+  {
+    "Id": 5,
+    "PessoaId": 3,
+    "PessoaNome": "Carlos André",
+    "FormaPagamento": 1,
+    "DataVenda": "2025-07-21T12:00:47.5227104-03:00",
+    "ValorTotal": 160.0,
+    "Status": 0,
+    "Produtos": [
+      {
+        "ProdutoId": 2,
+        "ProdutoNome": "Pão de Forma",
+        "Quantidade": 20,
+        "ValorUnitario": 8.0,
+        "ValorTotal": 160.0
+      }
+    ]
+  }
+]

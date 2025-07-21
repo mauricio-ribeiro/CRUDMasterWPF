@@ -1,0 +1,11 @@
+﻿<Application x:Class="CRUDMaster.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:cvtrs="clr-namespace:CRUDMaster.Converters">
+    <Application.Resources>
+        <cvtrs:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <cvtrs:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
+        <cvtrs:NullToBooleanConverter x:Key="NullToBooleanConverter"/>
+        <cvtrs:EnumToDescriptionConverter x:Key="EnumToDescriptionConverter"/>
+    </Application.Resources>
+</Application>

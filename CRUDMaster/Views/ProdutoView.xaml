@@ -1,0 +1,94 @@
+﻿<Window x:Class="CRUDMaster.Views.ProdutoView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CRUDMaster.Views"
+        xmlns:converters="clr-namespace:CRUDMaster.Converters"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Title="Cadastro de Produtos" Height="600" Width="800">
+    <Window.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <converters:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Filtros -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
+            <TextBlock Text="Filtrar por Nome:" VerticalAlignment="Center" Margin="5"/>
+            <TextBox Text="{Binding FiltroNome, UpdateSourceTrigger=PropertyChanged}" Width="150" Margin="5"/>
+            <TextBlock Text="Filtrar por Código:" VerticalAlignment="Center" Margin="5"/>
+            <TextBox Text="{Binding FiltroCodigo, UpdateSourceTrigger=PropertyChanged}" Width="150" Margin="5"/>
+            <TextBlock Text="Valor entre:" VerticalAlignment="Center" Margin="5"/>
+            <TextBox Text="{Binding ValorMinimo, UpdateSourceTrigger=PropertyChanged}" Width="80" Margin="5"/>
+            <TextBlock Text="e" VerticalAlignment="Center" Margin="5"/>
+            <TextBox Text="{Binding ValorMaximo, UpdateSourceTrigger=PropertyChanged}" Width="80" Margin="5"/>
+            <Button Content="Limpar Filtros" Command="{Binding LimparFiltrosCommand}" Margin="5" Width="100"/>
+        </StackPanel>
+
+        <!-- Botões de ação -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="5">
+            <Button Content="Novo" Command="{Binding NovoCommand}" Margin="5" Width="80"
+                    IsEnabled="{Binding EmModoEdicao, Converter={StaticResource InverseBooleanConverter}}"/>
+            <Button Content="Editar" Command="{Binding EditarCommand}" Margin="5" Width="80"
+                    IsEnabled="{Binding EmModoEdicao, Converter={StaticResource InverseBooleanConverter}}"/>
+            <Button Content="Salvar" Command="{Binding SalvarCommand}" Margin="5" Width="80"
+                    IsEnabled="{Binding EmModoEdicao}"/>
+            <Button Content="Cancelar" Command="{Binding CancelarCommand}" Margin="5" Width="80"
+                    IsEnabled="{Binding EmModoEdicao}"/>
+            <Button Content="Excluir" Command="{Binding ExcluirCommand}" Margin="5" Width="80"
+                    IsEnabled="{Binding EmModoEdicao, Converter={StaticResource InverseBooleanConverter}}"/>
+        </StackPanel>
+
+        <!-- Formulário de edição (visível apenas no modo de edição) -->
+        <Border Grid.Row="2" Margin="5" Padding="10" BorderBrush="LightGray" BorderThickness="1"
+                Visibility="{Binding EmModoEdicao, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Nome:" Grid.Row="0" Grid.Column="0" Margin="5"/>
+                <TextBox Text="{Binding ProdutoEmEdicao.Nome, UpdateSourceTrigger=PropertyChanged}" 
+                         Grid.Row="0" Grid.Column="1" Margin="5"/>
+
+                <TextBlock Text="Código:" Grid.Row="1" Grid.Column="0" Margin="5"/>
+                <TextBox Text="{Binding ProdutoEmEdicao.Codigo, UpdateSourceTrigger=PropertyChanged}" 
+                         Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+                <TextBlock Text="Valor:" Grid.Row="2" Grid.Column="0" Margin="5"/>
+                <TextBox Text="{Binding ProdutoEmEdicao.Valor, UpdateSourceTrigger=PropertyChanged}" 
+                         Grid.Row="2" Grid.Column="1" Margin="5"/>
+            </Grid>
+        </Border>
+
+        <!-- Grid de produtos (visível apenas fora do modo de edição) -->
+        <DataGrid Grid.Row="2" ItemsSource="{Binding ProdutosFiltrados}" 
+                  SelectedItem="{Binding ProdutoSelecionado}" 
+                  AutoGenerateColumns="False" CanUserAddRows="False" Margin="5"
+                  Visibility="{Binding EmModoEdicao, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=Inverse}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="Auto"/>
+                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" Width="*"/>
+                <DataGridTextColumn Header="Código" Binding="{Binding Codigo}" Width="*"/>
+                <DataGridTextColumn Header="Valor" Binding="{Binding Valor, StringFormat={}{0:C}}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
