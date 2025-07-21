@@ -9,7 +9,6 @@
              mc:Ignorable="d" 
              WindowState="Maximized"
             WindowStartupLocation="CenterScreen"
-            ResizeMode="NoResize"
         Title="Cadastro de Pessoas" Height="600" Width="800">
     <Grid>
         <Grid.RowDefinitions>
